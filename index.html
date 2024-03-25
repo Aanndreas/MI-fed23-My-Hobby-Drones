@@ -10,7 +10,7 @@
 
 <body>
     <header>
-        <h1>Drone photography</h1>
+        <h1 id="title">Drone photography</h1>
     </header>
     <nav>
         <ul>
@@ -21,11 +21,43 @@
     </nav>
     <main>
         <section id="about">
-            <h2>About Drone photography</h2>
-            <p>Text placeholder for information to come</p>
+            <h1>About Drone Photography</h1>
+            <button id="expandBtn">Read more</button>
+            <div id="expandableContent" class="expandable-content">
+                <p>Drone photography has revolutionized the way we capture moments from above, offering breathtaking
+                    perspectives that were once inaccessible to most photographers. As beginners delve into this
+                    fascinating
+                    realm, they'll discover a myriad of benefits associated with hiring a skilled drone photographer.
+                </p>
+                <p>Firstly, aerial photography provides a unique viewpoint, unveiling stunning landscapes, architectural
+                    marvels, and events from an elevated angle. This fresh perspective adds depth and dimension to
+                    photographs,
+                    captivating viewers and evoking a sense of wonder.</p>
+                <p>Moreover, drone photographers possess the expertise to navigate drones seamlessly, enabling them to
+                    capture
+                    images from vantage points that traditional photographers can't reach. This versatility allows for
+                    creative
+                    freedom, resulting in visually striking compositions that stand out.</p>
+                <p>Additionally, drone photography offers efficiency and convenience, as photographers can swiftly
+                    capture
+                    expansive areas without the need for elaborate setups or time-consuming equipment adjustments.</p>
+                <p>Furthermore, hiring a professional drone photographer ensures safety and compliance with regulations,
+                    as they
+                    are well-versed in aviation laws and safety protocols. With their knowledge and experience, they can
+                    navigate legal requirements and environmental considerations, guaranteeing responsible and ethical
+                    aerial
+                    photography practices.</p>
+                <p>In essence, embracing drone photography unlocks a world of possibilities for beginners, offering
+                    unparalleled
+                    perspectives, creative opportunities, efficiency, and safety. Hiring a skilled drone photographer
+                    not only
+                    enhances the quality of photographs but also elevates the storytelling potential, leaving a lasting
+                    impression on viewers.</p>
+            </div>
         </section>
         <section id="gallery">
             <h2>Photo gallery</h2>
+            <p>Here are some photos from our drone photography adventures:</p>
             <div class="wrapper">
                 <div class="items">
                     <div class="item" tabindex="0" style="background-image: url('images/2.jpg')"></div>
@@ -41,13 +73,20 @@
         <section id="contact">
             <h2>Contact</h2>
             <p>Feel free to contact me if any questions come to your mind or if you would like to know more about drone
-                photography.</p>
-            <!-- Contact form added here -->
+                photography:</p>
+            <ul class="contact-info">
+                <li><span>Email:</span> <a href="mailto:info@dronephotography.com" target="_blank">info@dronephotography.com</a></li>
+                <li><span>Phone:</span> <a href="tel:123-456-7890" target="_blank">123-456-7890</a></li>
+                <li><span>Address:</span> <a href="https://www.google.com/maps?q=40.7128,-74.0060" target="_blank">123 Drone Street,
+                        Cityville, Country</a>
+                </li>
+            </ul>
         </section>
     </main>
     <footer>
         <p>&copy; 2024 Drone photography</p>
     </footer>
+    <script src="app.js"></script>
 </body>
 
 </html>

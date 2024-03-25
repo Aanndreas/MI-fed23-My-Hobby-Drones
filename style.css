@@ -1,148 +1,238 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #bbbbbb;
 }
 
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
+	background-color: #333;
+	color: #fff;
+	padding: 1.2em;
+	text-align: center;
+}
+
+main {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1.2em;
+	padding: 1.2em;
+	justify-items: center;
+}
+
+h1 {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#title {
+    font-size: 3em;
+}
+nav {
+	font-size: 1.5em;
+	padding-top: 0.5em;
 }
 
 nav ul {
-    list-style-type: none;
-    padding: 0;
-    text-align: center;
+	list-style-type: none;
+	padding: 0;
+	text-align: center;
 }
 
 nav ul li {
-    display: inline;
-    margin-right: 20px;
+	display: inline;
+	margin-right: 1.2em;
 }
 
 nav ul li a {
-    color: #333;
-    text-decoration: none;
-    transition: color 0.3s ease; /* Adding transition for smooth effect */
+	color: #333;
+	text-decoration: none;
+	transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
-    color: #ffffff; /* Changing color on hover */
+	color: #ffffff;
 }
 
 * {
-    margin: 0;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Button styling */
+#expandBtn {
+	background-color: #778b77;
+	border: none;
+	color: white;
+	padding: 0.3em 0.5em;
+	font-size: 1em;
+	cursor: pointer;
+	border-radius: 0.187em;
+	transition: background-color 0.3s;
+	text-decoration: none;
+	display: inline-block;
+}
+
+/* Button hover effect */
+#expandBtn:hover {
+	background-color: #4caf50; 
+}
+
+#about {
+    font-size: 1.5em;
+	max-width: 65em;
+}
+
+#about p{
+	margin-bottom: 1.2em;
+}
+
+/* Contact Section */
+#contact {
+    background-color: #f9f9f919;
+    padding: 1.2em;
+    text-align: center;
+    border-radius: 0.5em;
+}
+
+#gallery {
+    font-size: 1.5em;
+}
+
+.contact-info {
+    list-style-type: none;
     padding: 0;
-    box-sizing: border-box;
+    margin-top: 1.2em;
+    font-size: 1em;
 }
 
-:root{
-    --index: calc(1vw + 1vh);
-    --transition: cubic-bezier(.1, .7, 0, 1);
+.contact-info li {
+    margin-bottom: 0.5em;
 }
 
-body{
-    background-color: #141414;
+.contact-info li span {
+    font-weight: bold;
+    color: #333;
+    margin-right: 0.5em;
 }
 
-.wrapper{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 80vh; /* Justera höjden efter behov */
+/* About drone photography content */
+.expandable-content {
+    display: none;
+    background-color: rgba(76, 175, 80, 0.5);
+    padding: 1.2em;
+    border-radius: 0.3em;
 }
 
-.items{
-    display: flex;
-    gap: 0.4rem;
-    perspective: calc(var(--index) * 35);
+.expandable-content.active {
+	display: block;
+    max-width: 60vw;
 }
 
-.item{
-    width: calc(var(--index) * 3); /* Justera storleken efter behov */
-    height: calc(var(--index) * 12); /* Justera höjden efter behov */
-    background-color: #222;
-    background-size: cover;
-    background-position: center;
-    cursor: pointer;
-    filter: grayscale(1) brightness(.5);
-    transition: transform 1.25s var(--transition), filter 3s var(--transition), width 1.25s var(--transition);
-    will-change: transform, filter, rotateY, width;
+:root {
+	--index: calc(1vw + 1vh);
+	--transition: cubic-bezier(0.1, 0.7, 0, 1);
 }
 
-.item::before, .item::after{
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 20px;
-    right: calc(var(--index) * -1);
+.wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 45vh;
 }
 
-.item::after{
-    left: calc(var(--index) * -1);
+.items {
+	display: flex;
+	gap: 0.4rem;
+	perspective: calc(var(--index) * 35);
 }
 
-.items .item:hover{
-    filter: inherit;
-    transform: translateZ(calc(var(--index) * 10));
+.item {
+	width: calc(var(--index) * 4);
+	height: calc(var(--index) * 12);
+	background-color: #222;
+	background-size: cover;
+	background-position: center;
+	cursor: pointer;
+	filter: grayscale(1) brightness(0.5);
+	transition: transform 1.25s var(--transition), filter 3s var(--transition),
+		width 1.25s var(--transition);
+	will-change: transform, filter, rotateY, width;
+}
+
+.item::before,
+.item::after {
+	content: "";
+	position: absolute;
+	height: 100%;
+	width: 1.2em;
+	right: calc(var(--index) * -1);
+}
+
+.item::after {
+	left: calc(var(--index) * -1);
+}
+
+.items .item:hover {
+	filter: inherit;
+	transform: translateZ(calc(var(--index) * 10));
 }
 
 /*Right*/
 
-.items .item:hover + *{
-    filter: inherit;
-    transform: translateZ(calc(var(--index) * 8.5)) rotateY(35deg);
-    z-index: -1;
+.items .item:hover + * {
+	filter: inherit;
+	transform: translateZ(calc(var(--index) * 8.5)) rotateY(35deg);
+	z-index: -1;
 }
 
-.items .item:hover + * + *{
-    filter: inherit;
-    transform: translateZ(calc(var(--index) * 5.6)) rotateY(40deg);
-    z-index: -2;
+.items .item:hover + * + * {
+	filter: inherit;
+	transform: translateZ(calc(var(--index) * 5.6)) rotateY(40deg);
+	z-index: -2;
 }
 
-.items .item:hover + * + * + *{
-    filter: inherit;
-    transform: translateZ(calc(var(--index) * 2.5)) rotateY(30deg);
-    z-index: -3;
+.items .item:hover + * + * + * {
+	filter: inherit;
+	transform: translateZ(calc(var(--index) * 2.5)) rotateY(30deg);
+	z-index: -3;
 }
 
-.items .item:hover + * + * + * + *{
-    filter: inherit;
-    transform: translateZ(calc(var(--index) * .6)) rotateY(15deg);
-    z-index: -4;
+.items .item:hover + * + * + * + * {
+	filter: inherit;
+	transform: translateZ(calc(var(--index) * 0.6)) rotateY(15deg);
+	z-index: -4;
 }
-
 
 /*Left*/
 
-.items .item:has( + :hover){
-    filter: inherit;
-    transform: translateZ(calc(var(--index) * 8.5)) rotateY(-35deg);
+.items .item:has(+ :hover) {
+	filter: inherit;
+	transform: translateZ(calc(var(--index) * 8.5)) rotateY(-35deg);
 }
 
-.items .item:has( + * + :hover){
-    filter: inherit;
-    transform: translateZ(calc(var(--index) * 5.6)) rotateY(-40deg);
+.items .item:has(+ * + :hover) {
+	filter: inherit;
+	transform: translateZ(calc(var(--index) * 5.6)) rotateY(-40deg);
 }
 
-.items .item:has( + * + * + :hover){
-    filter: inherit;
-    transform: translateZ(calc(var(--index) * 2.5)) rotateY(-30deg);
+.items .item:has(+ * + * + :hover) {
+	filter: inherit;
+	transform: translateZ(calc(var(--index) * 2.5)) rotateY(-30deg);
 }
 
-.items .item:has( + * + * + * + :hover){
-    filter: inherit;
-    transform: translateZ(calc(var(--index) * .6)) rotateY(-15deg);
+.items .item:has(+ * + * + * + :hover) {
+	filter: inherit;
+	transform: translateZ(calc(var(--index) * 0.6)) rotateY(-15deg);
 }
 
-.items .item:active, .items .item:focus {
-    width: 28vw;
-    filter: inherit;
-    z-index: 100;
-    transform: translateZ(calc(var(--index) * 10));
-    margin: 0 .45vw;
+.items .item:active,
+.items .item:focus {
+	width: 28vw;
+	filter: inherit;
+	z-index: 100;
+	transform: translateZ(calc(var(--index) * 10));
+	margin: 0 0.45vw;
 }
