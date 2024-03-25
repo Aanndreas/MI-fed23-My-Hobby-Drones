@@ -118,6 +118,16 @@ nav ul li a:hover {
     margin-right: 0.5em;
 }
 
+.contact-info a {
+    color: inherit;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.contact-info a:hover {
+    color: #ffffff;
+}
+
 /* About drone photography content */
 .expandable-content {
     display: none;
