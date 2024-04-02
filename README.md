@@ -22,11 +22,12 @@ This is a small school assigment from Medieinstitutet to practice Git. It includ
 
 ## Setup
 
-To run this website locally, follow these steps:
+To set up the project, follow these steps:
 
 1. Clone this repository to your local machine.
 2. Navigate to the project directory.
-3. Open the `index.html` file in your web browser.
+3. Run `npm install` to install the dependencies.
+4. After the installation is complete, you can start the project by running `npm start` or `vite`.
 
 ## Usage
 
