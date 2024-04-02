@@ -1,0 +1,16 @@
+{
+  "name": "mi-fed23-my-hobby-drones",
+  "version": "1.0.0",
+  "description": "This is a small school assignment from Medieinstitutet to practice Git. It includes sections for information about drone photography, a photo gallery, and contact details.",
+  "main": "app.js",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^5.2.7"
+  }
+}
